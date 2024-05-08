@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENERGYM</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark">
+    <div class="container">
+      <img src="images/energyme.png" alt="" id="logo">   
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
+        <ul class="navbar-nav" >
+          <li class="nav-item" style="margin-right: 30px;">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a class="nav-link" href="#about">About Us</a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a class="nav-link" href="#classes">Classes</a>
+          </li>
+          <li class="nav-item"style="margin-right: 30px;">
+            <a class="nav-link" href="#planning">Planning</a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a class="nav-link" href="#nutrition">Nutrition</a>
+          </li>
+          <li class="nav-item" style="margin-right: 30px;">
+            <a class="nav-link" href="#contact">Contact Us</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="login.php">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+<div class="jumbotron text-center" id="home">
+  <h1>Welcome to EnerGym</h1>
+  <p>We help you achieve your fitness goals!</p>
+</div>
+
+   <section id="facts" class="facts">
+    <div class="container">
+
+      <div class="row no-gutters">
+
+        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
+          <div class="count-box">
+            <i class="bi bi-emoji-smile"></i>
+            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+            <p><strong>Happy Clients</strong> consequuntur quae</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="count-box">
+            <i class="bi bi-journal-richtext"></i>
+            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+            <p><strong>Projects</strong> adipisci atque cum quia aut</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
+          <div class="count-box">
+            <i class="bi bi-headset"></i>
+            <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+            <p><strong>Hours Of Support</strong> aut commodi quaerat</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="count-box">
+            <i class="bi bi-people"></i>
+            <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+            <p><strong>Hard Workers</strong> rerum asperiores dolor</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+<div class="container mb-5" id="about">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>About Us</h2>
+      <p>Your Gym Name is dedicated to providing a supportive and motivating environment for you to reach your fitness goals. We offer state-of-the-art equipment, expert trainers, and a variety of classes to suit all fitness levels.</p>
+    </div>
+    <div class="col-md-6">
+      <img src="images/back.jpg" class="img-fluid" alt="Gym Image"> 
+    </div>
+  </div>
+</div>
+<div class="container mb-5" id="classes">
+  <h2 class="text-center mb-4">Classes</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Yoga</h5>
+          <p class="card-text">Join our yoga classes to improve flexibility and mental well-being.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Cardio</h5>
+          <p class="card-text">Get your heart pumping with our cardio workout sessions.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Strength Training</h5>
+          <p class="card-text">Build muscle and strength with our strength training classes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mb-5" id="planning">
+  <h2 class="text-center mb-5">Planning</h2>
+  <div class="days-navigation mb-3">
+    <button type="button" class="btn btn-outline-dark" onclick="toggleButton(this,'monday')">Monday</button>
+    <button type="button" class="btn btn-outline-dark" onclick="toggleButton(this,'tuesday')">Tuesday</button>
+    <button type="button" class="btn btn-outline-dark" onclick="toggleButton(this,'wednesday')">Wednesday</button>
+    <button type="button" class="btn btn-outline-dark" onclick="toggleButton(this,'thursday')">Thursday</button>
+    <button type="button" class="btn btn-outline-dark" onclick="toggleButton(this,'friday')">Friday</button>
+    <button type="button" class="btn btn-outline-dark" onclick="toggleButton(this,'saturday')">Saturday</button>
+    <button type="button" class="btn btn-outline-dark" onclick="toggleButton(this, 'sunday')">Sunday</button>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Classe</th>
+          <th scope="col">Temps</th>
+          <th scope="col">Coach</th>
+          <th scope="col">Join us</th>
+        </tr>
+      </thead>
+      <tbody id="schedule-body">
+      </tbody>
+    </table>
+  </div>
+</div>
+<div id="classes" class="mb-5">
+<h2 class="text-center mb-5">Classes</h2>
+<p>Découvrez nos coachs dévoués prêts à vous accompagner dans votre parcours de remise en forme. Rencontrez notre équipe passionnée et expérimentée qui vous aidera à atteindre vos objectifs de santé et de bien-être.</p>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">John Doe</h5>
+          <p class="card-text">Join our yoga classes to improve flexibility and mental well-being.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">James Holmes</h5>
+          <p class="card-text">Get your heart pumping with our cardio workout sessions.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">azery</h5>
+          <p class="card-text">Build muscle and strength with our strength training classes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="text-center mb-5">Nutrition</h2>
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="images/nutrition.avif" class="img-fluid rounded-top " alt="Image">
+    </div>
+    <div class="col-md-6">
+      <div class="p-4">
+        <h2>Bonne nutrition</h2>
+        <p>Une nutrition adéquate est fondamentale pour fournir à notre corps les nutriments essentiels
+           nécessaires à son bon fonctionnement, soutenant ainsi la croissance, renforçant le système 
+           immunitaire, prévenant les maladies chroniques, maintenant un poids santé, et améliorant 
+           la santé mentale et la qualité de vie globale..</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h2 class="text-center mb-5">Coach</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="profile">
+        <img src="images/IMG-20240420-WA0023.jpg" class="img-fluid rounded-circle mb-2" alt="Profil 1">
+        <h3>jhon svhv</h3>
+        <p>Informations supplémentaires sur la personne .</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="profile">
+        <img src="images/IMG-20240420-WA0025.jpg" class="img-fluid rounded-circle mb-2" alt="Profil 2">
+        <h3>marsut stya</h3>
+        <p>Informations supplémentaires sur la personne .</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="profile">
+        <img src="images/IMG-20240420-WA0026.jpg" class="img-fluid rounded-circle mb-2" alt="Profil 3">
+        <h3>nori hstf</h3>
+        <p>Informations supplémentaires sur la personne .</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="text-white text-center py-3" id="contact">
+  <div class="container">
+    <p>&copy; 2024 EnerGym. All rights reserved.</p>
+  </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
