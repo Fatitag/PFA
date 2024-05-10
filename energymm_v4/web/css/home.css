@@ -1,0 +1,30 @@
+.statistic-card {
+    display: inline-block; /* Display cards inline */
+    width:250px; /* Calculate width for three cards with margin */
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    vertical-align: top; /* Align cards to the top of the container */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+.statistic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.statistic-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.statistic-card p {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+}
