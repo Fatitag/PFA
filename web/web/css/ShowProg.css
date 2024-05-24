@@ -1,0 +1,63 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.recipe-section {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    width: 80%;
+}
+.recipe-section h2 {
+    color: #e74c3c;
+    flex: 1;
+    margin-top: 0;
+}
+.recipe-image {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    width: 150px; 
+    height: 150px; 
+    overflow: hidden; 
+}
+.recipe-image img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    border-radius: 50%; 
+}
+.recipe-details {
+    flex: 1;
+    margin-top: 0;
+    position: relative;
+}
+.recipe-details p {
+    color: #333;
+}
+.details-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    margin-top: 3px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.card {
+   /* border: 1px solid #ccc;
+    padding: 10px;*/
+    margin-top: 20px;
+    display: none;
+    width: 80%;
+}
+.hide-button {
+    display: none;
+}

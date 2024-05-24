@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+<style>body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.profile-pic {
+    flex: 1;
+    text-align: center;
+}
+
+.profile-pic img {
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+.info {
+    flex: 1;
+    padding: 20px;
+}
+
+.info h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+div#name,
+div#email,
+div#phone,
+div#password {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+</style></head>
+<body>
+    <div class="container">
+        <div class="profile-pic">
+            <img src="profile-pic.jpg" alt="Profile Picture">
+        </div>
+        <div class="info">
+            <h2>Student Information</h2>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <div id="name">John Doe</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <div id="email">john@example.com</div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <div id="phone">123-456-7890</div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <div id="password">*********</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

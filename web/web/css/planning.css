@@ -1,0 +1,65 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #000000;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  table td,.table th {
+    color: black;
+}
+.days-navigation {
+    display: flex;
+    justify-content: center;
+}
+
+.day-nav {
+    color: white;
+    margin: 0 10px; 
+}
+.btn {
+    background-color: transparent;
+    border: none; 
+    color: black; 
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; 
+    cursor: pointer;
+    border-radius: 5px;
+  }        
+  .btn:hover{
+    background-color: orange;
+  }
+  .btn.clicked {
+    background-color: orange;
+  }
+  p{
+color: black;
+}
+#planning{
+color: black;
+}
+.join-btn {
+background-color: #bf9032;
+color: white;
+padding: 8px 16px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+}
+h2{
+text-align:center;
+text-decoration-line:underline orange;
+}
