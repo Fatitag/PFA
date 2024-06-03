@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: white;
+  }
+  
+  .jumbotron  {
+    background-image: url('../images/back.jpg');
+    background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+  height: 300px;
+  border-radius: none;
+}
+.navbar {
+    display: flex;
+    background-color: #000; 
+    justify-content: center; 
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 90px;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.nav-item {
+    padding: 0 15px; 
+}
+
+.nav-link {
+    color: #ffffff; 
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #ff7f00;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        padding: 5px 0; 
+    }
+}
+
+h2{color: white;}
+#logo {
+width: 100px; 
+}
+nav{background-color: white;}
+
+.join-btn {
+    background-color: #bf9032;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+#classes{
+    color: black;
+}
+#planning{
+    color: black;
+}
+
+#contact{
+    color: black;
+}
+.table td,.table th {
+            color: white;
+        }
+        .days-navigation {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .day-nav {
+            color: white;
+            margin: 0 10px; 
+        }
+        .btn {
+            background-color: transparent;
+            border: none; 
+            color: #ffffff; 
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px; 
+            cursor: pointer;
+            border-radius: 5px;
+          }        
+          .btn:hover{
+            background-color: orange;
+          }
+          .btn.clicked {
+            background-color: orange;
+          }
+          
+p{
+    color: white;
+}
+.card-text {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+.card-title {
+    color: rgb(255, 255, 255);
+}
+
+
+
+.image-description {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+#facts {
+    margin-bottom: 50px;
+}
+.count-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #000000;
+    transition: all 0.3s ease-in-out;
+    width: 200px; 
+}
+
+.count-box:hover {
+    box-shadow: rgba(0, 0, 0, 0.2);
+}
+.carousel-item img {
+    max-height: 400px;
+    width: auto;
+    object-fit: cover;
+}
+
+.carousel-caption h5 {
+    font-size: 1.5rem; 
+}
+
+.carousel-caption p {
+    font-size: 1rem; 
+}
+.card.card-with-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.5); 
+    border: none; 
+    height: 300px; 
+  }
+  
+  .card.card-with-background .card-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  #title{
+    font-weight: bold;
+
+}
+.form-control {
+    background-color: transparent;
+    border: 1px solid rgb(255, 255, 255);
+    color: #ff7f00;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+}
+.btn-orange {
+    background-color: #ff7f00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-orange:hover {
+    background-color: #ff7f00;
+}
+.social-icon {
+    color: #ff7f00; 
+    font-size: 24px; 
+    margin-right: 10px; 
+}
+
+.social-icon:hover {
+    color: orange;
+}
+.no-bg-color {
+    background-color: transparent !important;
+}
+.no-focus-outline:focus {
+    outline: none;
+    background-color: white;
+}

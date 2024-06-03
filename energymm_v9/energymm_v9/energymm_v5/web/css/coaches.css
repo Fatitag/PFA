@@ -1,0 +1,60 @@
+.content {
+    margin: 80 ;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+    position: relative; 
+
+}
+h3{
+    text-decoration:underline orange;
+}
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+.join-session {
+    background-color: #ff7f00; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.back-button {
+    background-color: transparent;
+    border: none;
+    color: orange;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.back-button i {
+    margin-right: 5px; 
+}
