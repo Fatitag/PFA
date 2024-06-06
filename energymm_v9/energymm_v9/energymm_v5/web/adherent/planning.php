@@ -7,17 +7,6 @@ if (!isset($_SESSION['loggedin'])) {
 }
 require("../php/log_BD.php");
 $ida = $_SESSION['id_adherent'];
-
-?>
-<?php
-
-if (!isset($_SESSION['loggedin'])) {
-    header('Location: ../index.php');
-    exit;
-}
-require("../php/log_BD.php");
-$ida = $_SESSION['id_adherent'];
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -27,7 +16,6 @@ $ida = $_SESSION['id_adherent'];
     <title>Bienvenue</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.0/font/bootstrap-icons.min.css">
-    <!-- <link rel="stylesheet" href="../css/planning.css"> -->
     <link rel="stylesheet" href="../css/dashboard.css">
     <style>
         body, content {
@@ -58,7 +46,16 @@ $ida = $_SESSION['id_adherent'];
         .days-navigation {
             display: flex;
             justify-content: space-around;
-            /* margin-bottom: 2rem; */
+            margin-bottom: 20px;
+            flex-wrap: nowrap; 
+            overflow-x: auto; 
+            -webkit-overflow-scrolling: touch; 
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+        }
+
+        .days-navigation::-webkit-scrollbar {
+            display: none; 
         }
 
         .day-nav {
@@ -74,17 +71,35 @@ $ida = $_SESSION['id_adherent'];
             justify-content: space-between;
             border-radius: 5px;
             border: none;
+            margin: 5px;
         }
 
-        .btn:hover, .btn.clicked {
+        .btn:hover {
             background-color: orange;
         }
 
-        .join-btn {
-            background-color: #bf9032;
+        .btn.active {
+            background-color: #ff7f00;
             color: white;
-            padding: 8px 16px;
+        }
+
+        .join-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .join-btn:hover {
+            background-color: #218838;
+        }
+
+        .join-btn:active {
+            background-color: #1e7e34;
         }
 
         h2 {
@@ -120,28 +135,82 @@ $ida = $_SESSION['id_adherent'];
         }
 
         .close-btn:hover {
-            background-color: #EEEEEE;
+            background-color: #DDDDDD;
         }
 
         .menu-items {
             color: white;
         }
-    </style>
 
+        .error-message {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+            width: 80%;
+            max-width: 500px;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .table-responsive table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .table-responsive th, .table-responsive td {
+                white-space: nowrap;
+                padding: 8px 16px;
+            }
+
+            .btn {
+                margin: 5px 0;
+                width: 90%;
+            }
+
+            #message {
+                width: 90%;
+                max-width: 400px;
+            }
+
+            .container {
+                padding: 0 10px;
+            }
+        }
+    </style>
 </head>
 <body>
 <?php include_once("../adherent/sidebar.php"); ?>
+<script>
+    var contentDiv = document.getElementById('planning');
+    contentDiv.style.backgroundColor = '#ff7f00';
+</script>
+
 <div class="content">
     <div class="container mb-5" id="planning">
-        <h2 class="text-center mb-5">Planning Join</h2> <br>
+        <h2 class="text-center mb-5">Planification</h2> <br>
         <div class="days-navigation">
-            <button type="button" class="btn" onclick="loadSchedule('monday')">Monday</button>
-            <button type="button" class="btn" onclick="loadSchedule('tuesday')">Tuesday</button>
-            <button type="button" class="btn" onclick="loadSchedule('wednesday')">Wednesday</button>
-            <button type="button" class="btn" onclick="loadSchedule('thursday')">Thursday</button>
-            <button type="button" class="btn" onclick="loadSchedule('friday')">Friday</button>
-            <button type="button" class="btn" onclick="loadSchedule('saturday')">Saturday</button>
-            <button type="button" class="btn" onclick="loadSchedule('sunday')">Sunday</button>
+            <button type="button" class="btn" onclick="loadSchedule('monday', this)">Lundi</button>
+            <button type="button" class="btn" onclick="loadSchedule('tuesday', this)">Mardi</button>
+            <button type="button" class="btn" onclick="loadSchedule('wednesday', this)">Mercredi</button>
+            <button type="button" class="btn" onclick="loadSchedule('thursday', this)">Jeudi</button>
+            <button type="button" class="btn" onclick="loadSchedule('friday', this)">Vendredi</button>
+            <button type="button" class="btn" onclick="loadSchedule('saturday', this)">Samedi</button>
+            <button type="button" class="btn" onclick="loadSchedule('sunday', this)">Dimanche</button>
+        </div>
+        <div id="error-message" class="error-message" style="display: <?php echo isset($_GET['error']) ? 'block' : 'none'; ?>;">
+            <?php
+            if (isset($_GET['error']) && $_GET['error'] == 'already_enrolled') {
+                echo "You are already enrolled in this session.";
+            }
+            ?>
+            <br>
+            <button class="close-btn" onclick="closeMessage()">fermer</button>
         </div>
         <div class="table-responsive">
             <table class="table table-bordered">
@@ -150,7 +219,7 @@ $ida = $_SESSION['id_adherent'];
                         <th scope="col">Classe</th>
                         <th scope="col">Temps</th>
                         <th scope="col">Coach</th>
-                        <th scope="col">Join us</th>
+                        <th scope="col">Rejoignez-nous</th>
                     </tr>
                 </thead>
                 <tbody id="schedule-body">
@@ -160,25 +229,21 @@ $ida = $_SESSION['id_adherent'];
     </div><br>
 
     <div class="container mb-5" id="planning">
-        <h2 class="text-center mb-5">Joined Classes</h2> <br>
-        <div id="message" style="display: none;">
-            <?php
-            if (isset($_GET['error']) && $_GET['error'] == 'already_enrolled') {
-                echo "You are already enrolled in this session.";
-            }
-            ?>
+        <h2 class="text-center mb-5">Cours rejoints</h2> <br>
+        <div id="message">
+            <span id="message-text"></span>
             <br>
-            <button class="close-btn" onclick="closeMessage()">Close</button>
+            <button class="close-btn" onclick="closeMessage()">fermer</button>
         </div>
         <div class="table-responsive">
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">Day</th>
+                        <th scope="col">Jour</th>
                         <th scope="col">Coach</th>
                         <th scope="col">Cours</th>
-                        <th scope="col">Type cours</th>
-                        <th scope="col">Time</th>
+                        <th scope="col">Type de cours</th>
+                        <th scope="col">Heure</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -229,39 +294,64 @@ $ida = $_SESSION['id_adherent'];
                             echo "</tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='6'>No joined classes available.</td></tr>";
+                        echo "<tr><td colspan='6'>Aucun cours rejoint disponible.</td></tr>";
                     }
                     ?>
                 </tbody>
             </table>
         </div>
     </div>
+    <div id="error-message" class="error-message" style="display: none;"></div>
+
 </div>
 
 <script>
-    window.onload = function() {
-        var messageDiv = document.getElementById('message');
-        if (messageDiv.innerHTML.trim() !== '') {
-            messageDiv.style.display = 'block';
-        }
-    };
-
-    function closeMessage() {
-        var messageDiv = document.getElementById('message');
-        messageDiv.style.display = 'none';
-    }
-
-    function loadSchedule(day) {
+    function loadSchedule(day, btn) {
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
                 document.getElementById("schedule-body").innerHTML = this.responseText;
+
+                // Remove 'active' class from all buttons
+                var buttons = document.querySelectorAll('.btn');
+                buttons.forEach(function(button) {
+                    button.classList.remove('active');
+                });
+
+                // Add 'active' class to the clicked button
+                btn.classList.add('active');
             }
         };
         xhr.open("GET", "../adherent/fetch_second_table.php?day=" + day, true);
         xhr.send();
     }
+
+    function joinSession(sessionId) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                var response = JSON.parse(this.responseText);
+                var messageDiv = document.getElementById('error-message');
+                if (response.status === 'error') {
+                    messageDiv.innerText = response.message;
+                    messageDiv.style.display = 'block';
+                    messageDiv.classList.add('error-message');
+                } else {
+                    loadSchedule(currentDay); 
+                }
+            }
+        };
+        xhr.open("POST", "../adherent/joinSeance.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        var params = "session_id=" + sessionId;
+        xhr.send(params);
+    }
+
+    function closeMessage() {
+        var errorMessage = document.getElementById('error-message');
+        errorMessage.style.display = 'none';
+    }
 </script>
-<script src="js/script.js"></script>
+
 </body>
 </html>

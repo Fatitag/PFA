@@ -94,7 +94,7 @@ $pdo = null;
             <a class="nav-link" href="#home">Home</a>
           </li>
           <li class="nav-item" style="margin-right: 30px;">
-            <a class="nav-link" href="#about">About Us</a>
+            <a class="nav-link" href="#about">À propos nous </a>
           </li>
           <li class="nav-item" style="margin-right: 30px;">
             <a class="nav-link" href="#classes">Classes</a>
@@ -106,12 +106,12 @@ $pdo = null;
             <a class="nav-link" href="#nutrition">Nutrition</a>
           </li>
           <li class="nav-item" style="margin-right: 30px;">
-            <a class="nav-link" href="#contact">Contact Us</a>
+            <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="php/login.php">Login &nbsp;  / &nbsp;  Sign up</a>
+            <a class="nav-link" href="php/login.php">Connecte/Inscrire</a>
           </li>
         </ul>
       </div>
@@ -119,8 +119,8 @@ $pdo = null;
   </nav>
   
 <div class="jumbotron text-center" id="home">
-  <h1>Welcome to EnerGym</h1>
-  <p>We help you achieve your fitness goals!</p>
+<h1>Bienvenue chez EnerGym</h1>
+<p>Nous vous aidons à atteindre vos objectifs de remise en forme !</p>
 </div>
 
    <section id="facts" class="facts">
@@ -149,7 +149,7 @@ $pdo = null;
           <div class="count-box">
             <i class="bi bi-apple"></i>
             <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-            <p><strong>Nutritionists:</strong> &nbsp; <?php echo $totalNutritionists; ?></p>
+            <p><strong>Nutritionistes:</strong> &nbsp; <?php echo $totalNutritionists; ?></p>
           </div>
         </div>
 
@@ -157,7 +157,7 @@ $pdo = null;
           <div class="count-box">
             <i class="bi bi-people"></i>
             <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-            <p><strong> Visitors:</strong> &nbsp; <?php echo $totalVisitors; ?></p>
+            <p><strong> Visiteurs:</strong> &nbsp; <?php echo $totalVisitors; ?></p>
           </div>
         </div>
 
@@ -174,10 +174,10 @@ $pdo = null;
       <img src="images/gym.jpeg" class="img-fluid" alt="Gym Image"> 
     </div>
     <div class="col-md-6">
-      <h2>About Us</h2>
-        <p>Welcome to EnerGym! We're all about clean, sustainable energy solutions. Whether you're a homeowner, a business, or a community. Our mission is to provide reliable, affordable, and environmentally friendly energy solutions that benefit .</p>
-<p>At EnerGym, we have the best team of certified trainers and state-of-the-art facilities are here to support you on your fitness journey.</p>
-        <p>We offer personalized training programs, group classes, and nutritional guidance to help you achieve your goals.</p>
+    <h2>À propos de nous</h2>
+<p>Bienvenue chez EnerGym ! Nous nous concentrons sur des solutions énergétiques propres et durables.Notre mission est de fournir des solutions énergétiques fiables, abordables et respectueuses qui profitent à tous.</p>
+<p>Chez EnerGym, nous avons la meilleure équipe de formateurs certifiés pour vous soutenir dans votre parcours de remise en forme.</p>
+<p>Nous proposons des programmes d'entraînement personnalisés, des cours en groupe et des conseils nutritionnels pour vous aider à atteindre vos objectifs.</p>
     </div>
     
   </div>
@@ -189,7 +189,7 @@ $pdo = null;
     <div class="card card-with-background" style="background-image: url('images/box.jpg');">
         <div class="card-body">
           <h5 class="card-title">Box</h5>
-          <p class="card-text">Join our box classes to improve flexibility and mental well-being.</p>
+          <p class="card-text">Rejoignez nos cours collectifs pour améliorer votre flexibilité et votre bien-être mental.</p>
         </div>
       </div>
     </div>
@@ -197,15 +197,15 @@ $pdo = null;
     <div class="card card-with-background" style="background-image: url('images/cardio.jpg');">
         <div class="card-body">
           <h5 class="card-title">Cardio</h5>
-          <p class="card-text">Get your heart pumping with our cardio workout sessions.</p>
+          <p class="card-text">Faites battre votre cœur avec nos séances d'entraînement cardio.</p>
         </div>
       </div>
     </div>
     <div class="col-md-4">
     <div class="card card-with-background" style="background-image: url('images/strengh.avif');">
         <div class="card-body">
-          <h5 class="card-title">Strength Training</h5>
-          <p class="card-text">Build muscle and strength with our strength training classes.</p>
+        <h5 class="card-title">Entraînement de force</h5>
+        <p class="card-text">Développez vos muscles et votre force avec nos cours d'entraînement de force.</p>
         </div>
       </div>
     </div>
@@ -215,22 +215,22 @@ $pdo = null;
 <div class="container mb-5" id="planning">
   <h2 class="text-center mb-5">Planning</h2>
   <div class="days-navigation mb-3">
-  <button type="button" class="btn btn-outline-dark" onclick="loadSchedule('monday')">Monday</button>
-  <button type="button" class="btn btn-outline-dark" onclick="loadSchedule('tuesday')">Tuesday</button>
-  <button type="button" class="btn btn-outline-dark" onclick="loadSchedule('wednesday')">Wednesday</button>
-  <button type="button" class="btn btn-outline-dark" onclick="loadSchedule('thursday')">Thursday</button>
-  <button type="button" class="btn btn-outline-dark" onclick="loadSchedule('friday')">Friday</button>
-  <button type="button" class="btn btn-outline-dark" onclick="loadSchedule('saturday')">Saturday</button>
-  <button type="button" class="btn btn-outline-dark" onclick="loadSchedule('sunday')">Sunday</button>
+  <button type="button" class="btn btn-outline-dark" onclick="loadSchedule('monday')">Lundi</button>
+<button type="button" class="btn btn-outline-dark" onclick="loadSchedule('tuesday')">Mardi</button>
+<button type="button" class="btn btn-outline-dark" onclick="loadSchedule('wednesday')">Mercredi</button>
+<button type="button" class="btn btn-outline-dark" onclick="loadSchedule('thursday')">Jeudi</button>
+<button type="button" class="btn btn-outline-dark" onclick="loadSchedule('friday')">Vendredi</button>
+<button type="button" class="btn btn-outline-dark" onclick="loadSchedule('saturday')">Samedi</button>
+<button type="button" class="btn btn-outline-dark" onclick="loadSchedule('sunday')">Dimanche</button>
   </div>
   <div class="table-responsive">
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th scope="col">Classe</th>
-          <th scope="col">Temps</th>
-          <th scope="col">Coach</th>
-          <th scope="col">Join us</th>
+        <th scope="col">Classe</th>
+        <th scope="col">Temps</th>
+        <th scope="col">Coach</th>
+        <th scope="col">Rejoignez-nous</th>
         </tr>
       </thead>
       <tbody id="schedule-body">
@@ -248,9 +248,9 @@ $pdo = null;
     </div>
     <div class="col-md-6">
       <div class="p-4">
-      <h2>Fuel Your Body Right</h2>
-        <p>Good nutrition is vital for providing our bodies with essential nutrients needed for proper functioning, supporting growth, boosting the immune system, preventing chronic diseases, maintaining a healthy weight, and improving mental health and overall quality of life.
-At EnerGym, we understand the importance of balanced nutrition tailored to your individual needs. That's why we offer consultations with our specialized nutritionists. Our qualified experts can help you achieve your health and wellness goals by creating personalized meal plans.</p>
+      <h2>Nourrissez Votre Corps Correctement</h2>
+<p>Une bonne nutrition est essentielle pour fournir à notre corps les nutriments nécessaires au bon fonctionnement,renforcer le système immunitaire, prévenir les maladies chroniques, maintenir un poids santé et améliorer la santé mentale et la qualité de vie globale.
+Chez EnerGym, nous comprenons l'importance d'une nutrition équilibrée adaptée à vos besoins individuels. Nos experts qualifiés peuvent vous aider à atteindre vos objectifs de santé et de bien-être en créant des plans de repas personnalisés.</p>
       </div>
     </div>
   </div>
@@ -265,7 +265,7 @@ At EnerGym, we understand the importance of balanced nutrition tailored to your 
       <img src="images/IMG-20240420-WA0023.jpg" class="d-block w-100" alt="Profile 1">
       <div class="carousel-caption d-none d-md-block">
         <h5><strong>Meryem sakhi</strong></h5>
-        <p><strong>A professional kickboxer known for his powerful striking abilities and aggressive fighting style.
+        <p><strong>Un kickboxeur professionnel connu pour ses capacités de frappe puissantes et son style de combat agressif.</strong></p>
 </strong></p>
       </div>
     </div>
@@ -274,7 +274,7 @@ At EnerGym, we understand the importance of balanced nutrition tailored to your 
       <img src="images/IMG-20240420-WA0025.jpg" class="d-block w-100" alt="Profile 2">
       <div class="carousel-caption d-none d-md-block">
         <h5><strong>Badr hari</strong></h5>
-        <p><strong>Specializes in strength training and has experience working with clients of all fitness levels, from beginners to advanced athletes.
+        <p><strong>Spécialisé dans l'entraînement en force et possède une expérience de travail avec des clients de tous niveaux de condition physique, des débutants aux athlètes avancés.</strong></p>
 </strong></p>
       </div>
     </div>
@@ -283,7 +283,7 @@ At EnerGym, we understand the importance of balanced nutrition tailored to your 
       <img src="images/IMG-20240420-WA0026.jpg" class="d-block w-100" alt="Profile 3">
       <div class="carousel-caption d-none d-md-block">
         <h5><strong>tom abimo</strong></h5>
-        <p><strong>A certified yoga instructor with expertise in various yoga styles, including Hatha, Vinyasa, and Yin yoga.
+        <p><strong>Un instructeur de yoga certifié avec une expertise dans différents styles de yoga, notamment le Hatha, le Vinyasa et le yoga Yin.</strong></p>
 </strong></p>
       </div>
     </div>
@@ -292,12 +292,12 @@ At EnerGym, we understand the importance of balanced nutrition tailored to your 
 
   <a class="carousel-control-prev" href="#coachCarousel" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+    <span class="sr-only">Précédent</span>
   </a>
   <a class="carousel-control-next" href="#coachCarousel" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <span class="sr-only">Suivant</span>
+</a>
 </div>
 
 <footer class="text-white text-center py-3" id="contact">
@@ -305,11 +305,11 @@ At EnerGym, we understand the importance of balanced nutrition tailored to your 
     <div class="row">
       <div class="col-md-6">
       <div class="gym-info" style="justify-content: center; padding-top: 100px;">
-      <h2 style="text-decoration: underline orange;">Gym Information</h2> <br>
+      <h2 style="text-decoration: underline; color: orange;">Informations sur la salle de sport</h2> <br>
       <div class="contact-info">
-    <p><i class="fas fa-envelope"></i> Email: info@energym.com</p>
-    <p><i class="fas fa-phone"></i> Phone: +1 (555) 123-4567</p>
-    <p><i class="fas fa-map-marker-alt"></i> Address: Lorem Ipsum Street, City, Country</p>
+    <p><i class="fas fa-envelope"></i> Email: energym@gmail.com</p>
+    <p><i class="fas fa-phone"></i> Téléphone : +212 690070206</p>
+    <p><i class="fas fa-map-marker-alt"></i> Addresse: EnerGym, Oujda, Maroc</p>
     </div>
           
     <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
@@ -322,21 +322,20 @@ At EnerGym, we understand the importance of balanced nutrition tailored to your 
       </div>
             <div class="col-md-6">
         <div class="contact-section" style="border: 2px solid white; padding: 20px; border-radius: 10px;">
-          <h2>Contact Us</h2>
+        <h2>Contactez-nous</h2>
           <form id="contactForm">
           <div class="form-group">
-    <input type="text" id="name" name="name" class="form-control no-bg-color no-focus-outline" placeholder="Enter your name" required>
-</div>
+          <input type="text" id="name" name="name" class="form-control no-bg-color no-focus-outline" placeholder="Entrez votre nom" required></div>
             <div class="form-group">
-              <input type="text" id="subject" name="subject" class="form-control no-bg-color no-focus-outline" placeholder="Enter your suject" required>
+              <input type="text" id="subject" name="subject" class="form-control no-bg-color no-focus-outline" placeholder="Entrer votre sujet" required>
             </div>
             <div class="form-group">
-              <input type="email" id="email" name="email" class="form-control no-bg-color no-focus-outline" placeholder="Enter your email" required>
+              <input type="email" id="email" name="email" class="form-control no-bg-color no-focus-outline" placeholder="Entrer votre email" required>
             </div>
             <div class="form-group">
-              <textarea id="message" name="message" rows="4" class="form-control no-bg-color no-focus-outline" placeholder="Enter your message" required></textarea>
+              <textarea id="message" name="message" rows="4" class="form-control no-bg-color no-focus-outline" placeholder="Entrer votre message" required></textarea>
             </div>
-            <button type="submit" class="btn btn-orange">Send</button>
+            <button type="submit" class="btn btn-orange">Envoyer</button>
           </form>
         </div>
       </div>

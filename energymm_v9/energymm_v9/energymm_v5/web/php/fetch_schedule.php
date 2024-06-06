@@ -37,7 +37,7 @@ WHERE
             echo "</tr>";
         }
     } else {
-        echo "<tr><td colspan='4'>No classes available on ".$selectedDay."</td></tr>";
+        echo "<tr><td colspan='4'>Aucun cours disponible le ".$selectedDay."</td></tr>";
     }
     
     $pdo = null;

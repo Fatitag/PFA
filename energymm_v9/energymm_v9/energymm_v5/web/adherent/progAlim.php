@@ -174,42 +174,55 @@ html, body {
         font-size: 16px;
     }
 }
+h2{
+    text-align:center;
+}
+h4{
+    color:#d17732;
+    text-align:center;
+}
 </style>
 
 </head>
 <body>
 
 <?php include("../adherent/sidebar.php"); ?>
+<script>
+    var contentDiv = document.getElementById('prog');
+            contentDiv.style.backgroundColor = '#ff7f00';
+</script>
 
 <div class="content">
     <div class="form-body">
+    <h2>Demande pour suivre un programme nutritionelle</h2>
+
         <div class="row">
             <div class="form-holder">
                 <div class="form-content">
                     <div class="form-items">
-                        <h3>Let's have a healthy life</h3>
+                        <h4>Ayons une vie saine!</h4>
                         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="requires-validation" novalidate>
 
                         <div class="col-md-12">
-                            <input class="form-control black-border" type="number"  name="poids" placeholder="Weight (kg)" required>
+                            <input class="form-control black-border" type="number"  name="poids" placeholder="poids (kg)" required>
                         </div><br>
 
                         <div class="col-md-12">
-                            <input class="form-control black-border" type="number"  name="taille" placeholder="Height (cm)" required>
+                            <input class="form-control black-border" type="number"  name="taille" placeholder="taille (cm)" required>
                         </div>
                         <div class="col-md-12">
-                            <input class="form-control" type="text" name="objectifs_sante" placeholder="Health Goals" required>
+                            <input class="form-control" type="text" name="objectifs_sante" placeholder="objectif" required>
                         </div>
 
                         <div class="col-md-12">
-                            <input class="form-control" type="text" name="allergies_alimentaires" placeholder="Food Allergies" required>
+                            <input class="form-control" type="text" name="allergies_alimentaires" placeholder="allergie alimentaire" required>
                         </div>
                         <input type="hidden" name="id_adherent" value="<?php echo $id_adherent; ?>">
 
                         <div class="col-md-12">
                             <?php if (count($result_nutritionnistes) > 0) {
                                 echo '<select name="id_nutritionniste" class="form-control" required>';
-                                echo '<option value="">-- Select a nutritionnist --</option>';
+                                echo '<option value="">-- Selectionner une nutritionniste --</option>';
                                 foreach($result_nutritionnistes as $row) {
                                     echo '<option style="width: 600px;" value="' . $row['id_nutritionniste'] . '">' . $row['nom_nutritionniste'] . '</option>';
                                 }
@@ -217,7 +230,7 @@ html, body {
                             }  ?>                          
                         </div><br>
                         <div class="form-button mt-3">
-                            <button id="submit" type="submit" class="btn btn-primary">Send</button>
+                            <button id="submit" type="submit" class="btn btn-primary">Envoyer</button>
                         </div>
 
                         </form>

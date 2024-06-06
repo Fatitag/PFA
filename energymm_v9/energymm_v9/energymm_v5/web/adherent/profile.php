@@ -136,7 +136,14 @@ $_SESSION['profilePictureURL'] = $profilePictureURL;
 </head>
 <body>
 
-<?php include_once("../adherent/sidebar.php"); ?>
+<?php 
+include_once("../adherent/sidebar.php"); 
+
+?>
+<script>
+    var contentDiv = document.getElementById('profile');
+            contentDiv.style.backgroundColor = '#ff7f00';
+</script>
 
 <div class="content">
     <p class="profile"><h1><em>Profile</em></h1></p>
@@ -158,12 +165,12 @@ $_SESSION['profilePictureURL'] = $profilePictureURL;
         <div class="profile-info">
             <div class="profile-section">
                 <div class="info-container">
-                    <p class="label">Name:</p>
+                    <p class="label">Nom:</p>
                     <p id="name" class="info"><?php echo $fullName; ?></p>
                     <a href="update_profile.php?field=nom_adherent"><button class="edit-button fas fa-pen"></button></a>
                 </div><hr>
                 <div class="info-container">
-                    <p class="label">Phone:</p>
+                    <p class="label">Prénom:</p>
                     <p id="phone" class="info"><?php echo $phone; ?></p>
                     <a href="update_profile.php?field=phone"><button class="edit-button fas fa-pen"></button></a>
                 </div>

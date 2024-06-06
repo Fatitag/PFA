@@ -105,6 +105,10 @@ $pdo = null;
 <body>
 
 <?php include_once("../adherent/sidebar.php"); ?>
+<script>
+    var contentDiv = document.getElementById('coach');
+            contentDiv.style.backgroundColor = '#ff7f00';
+</script>
 
 <div class="content">
     <?php foreach ($coachs as $coach): ?>
@@ -113,7 +117,7 @@ $pdo = null;
             <p class="card__exit">🎯</p>
             <div class="text"><?php echo nl2br(htmlspecialchars($coach['about_coach'])); ?></div>
             <p class="card__apply">
-            <a class="card__link" href="../adherent/coachDetails.php?id=<?php echo $coach['id_coach']; ?>">Apply Now <i class="fas fa-arrow-right"></i></a>
+            <a class="card__link" href="../adherent/coachDetails.php?id=<?php echo $coach['id_coach']; ?>">join ici <i class="fas fa-arrow-right"></i></a>
             </p>
         </div>
     <?php endforeach; ?>

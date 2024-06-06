@@ -160,15 +160,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="register-container">
     <h2>Inscription</h2>
     <form method="post" action="register.php">
-      <input type="text" placeholder="First Name" name="nom" required>
-      <input type="text" placeholder="Last Name" name="prenom" required>
+      <input type="text" placeholder="Nom" name="nom" required>
+      <input type="text" placeholder="Prenom" name="prenom" required>
       <input type="number" placeholder="Age" name="age" required>
       <input type="email" placeholder="Email" name="email" required>
-      <input type="password" placeholder="Password" name="password" required>
-      <button type="submit">Register <i class="bi bi-arrow-right"></i></button>
+      <input type="password" placeholder="Mot de passe" name="password" required>
+      <button type="submit">S'inscrire <i class="bi bi-arrow-right"></i></button>
     </form>
     <div class="footer-text">
-      <a href="../php/login.php">Already registered? Connect here</a>
+    <a href="../php/login.php">Déjà inscrit ? Connectez-vous ici</a>
     </div>
     <?php
     if (!empty($errors)) {

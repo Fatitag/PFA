@@ -8,7 +8,7 @@ if (!isset($_SESSION['loggedin'])) {
 require("../php/log_BD.php");
 
 if (!isset($_GET['id'])) {
-    header('Location: error.php');
+    header("Location: ../web/error.php");
     exit;
 }
 
@@ -220,7 +220,7 @@ body {
             display: block;
             margin-bottom: 20px;
             text-align: center;
-            padding: 10px 0;
+            padding: 5px 0;
             transition: background-color 0.3s, color 0.3s;
             width: 100%;
         }
@@ -297,7 +297,12 @@ body {
 <?php include_once("../adherent/sidebar.php"); ?>
 
 <div class="content">
-<a href="../adherent/chooseCoach.php" class="back-button"><i class="fas fa-arrow-left"></i> Back</a> 
+<script>
+    var contentDiv = document.getElementById('coach');
+            contentDiv.style.backgroundColor = '#ff7f00';
+</script>
+
+<a href="../adherent/chooseCoach.php" class="back-button"><i class="fas fa-arrow-left"></i> retour</a> 
 
     <div class="coach-details">
         <h2><?php echo htmlspecialchars($coach['nom_coach']); ?></h2>
@@ -305,14 +310,15 @@ body {
     </div>
     <!-- <button onclick="goBack()">Back</button> -->
     <div class="sessions">
-        <h3>Available Sessions</h3><br>
+        <h3>Séances disponibles</h3><br>
         <table>
             <tr>
-                <th>Date</th>
-                <th>Start Time</th>
-                <th>End Time</th>
-                <th>Number of Adherents</th>
-                <th>Action</th>
+            <th>Date</th>
+            <th>Heure de début</th>
+            <th>Heure de fin</th>
+            <th>Nombre d'adhérents</th>
+            <th>Action</th>
+
             </tr>
             <?php foreach ($sessions as $session): ?>
                 <tr>

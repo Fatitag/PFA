@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["day"])) {
             echo "</tr>";
         }
     } else {
-        echo "<tr><td colspan='4'>No classes available on ".$selectedDay."</td></tr>";
+        echo "<tr><td colspan='4'>Aucune classe disponible ".$selectedDay."</td></tr>";
     }
 
     $pdo = null; 

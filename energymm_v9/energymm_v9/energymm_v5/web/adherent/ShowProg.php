@@ -44,6 +44,11 @@ $conn = null;
 </head>
 <body>
     <?php include_once("../adherent/sidebar.php"); ?>
+    <script>
+    var contentDiv = document.getElementById('repas');
+            contentDiv.style.backgroundColor = '#ff7f00';
+</script>
+
     <div class="content">
     <?php foreach (['breakfast', 'lunch', 'snack', 'dinner'] as $mealType): ?>
         <?php foreach ($meals[$mealType] as $meal): ?>
@@ -55,7 +60,7 @@ $conn = null;
                     <h2><?php echo ucfirst($meal['libele_repas']); ?></h2>
                     <p><?php echo $meal['recette']; ?></p>
                     <p>Quantité: <?php echo $meal['quantite']; ?></p>
-                    <a href="#" class="details-button" onclick="toggleDetails(event)">more</a>
+                    <a href="#" class="details-button" onclick="toggleDetails(event)">plus</a>
                     <div class="card" style="display: none;">
                         <h3>Instructions</h3>
                         <ul>
@@ -80,13 +85,14 @@ $conn = null;
             var card = button.nextElementSibling;
             if (card.style.display === "none") {
                 card.style.display = "block";
-                button.textContent = "less";
+                button.textContent = "moins";
             } else {
                 card.style.display = "none";
-                button.textContent = "more";
+                button.textContent = "plus";
             }
         }
     </script>
+
 </div>
 </body>
 </html>

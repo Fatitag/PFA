@@ -24,13 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (count($result_check) > 0) {
         // If user is already enrolled in another session at the same time, return an error message
-        $response = array("status" => "error", "message" => "You are already enrolled in another session at this time.");
+        $response = array("status" => "error", "message" => "Vous êtes déjà inscrit à une autre session à ce moment-là.");
         echo json_encode($response);
         exit;
     }
 
     // If user is not enrolled in another session, proceed to enroll them in the session
-    $pdo->beginTransaction(); // Start a transaction
+    $pdo->beginTransaction(); 
 
     $sql_insert = "INSERT INTO inscriptionseance (id_adherent, id_seance) VALUES (?, ?)";
     $stmt_insert = $pdo->prepare($sql_insert);
@@ -42,31 +42,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt_update = $pdo->prepare($sql_update);
         $stmt_update->bindParam(1, $session_id, PDO::PARAM_INT);
         if ($stmt_update->execute()) {
-            // If the update is successful, commit the transaction
             $pdo->commit();
-            $response = array("status" => "success", "message" => "Session joined successfully.");
+            $response = array("status" => "success", "message" => "Session rejointe avec succès.");
             echo json_encode($response);
         } else {
             // If there's an error updating the session, rollback the transaction
             $pdo->rollBack();
-            $response = array("status" => "error", "message" => "Error joining session. Please try again later.");
-            echo json_encode($response);
+            $response = array("status" => "error", "message" => "Erreur lors de la connexion à la session. Veuillez réessayer plus tard.");
+            header("Location: ../web/error.php");
+            exit;
+            // echo json_encode($response);
         }
     } else {
         // If there's an error enrolling the user, return an error message
         $pdo->rollBack();
-        $response = array("status" => "error", "message" => "Error joining session. Please try again later.");
+        $response = array("status" => "error", "message" => "Erreur lors de la connexion à la session. Veuillez réessayer plus tard.");
         echo json_encode($response);
     }
-
-    // Clean up
+//cleaning
     $stmt_insert = null;
     $stmt_update = null;
     $stmt_check = null; 
     $pdo = null; 
 } else {
-    // If the request method is not POST, redirect to an error page
-    header('Location: ../error.html');
+    // If the request method is not POST, return an error message
+    $response = array("status" => "error", "message" => "Méthode de demande invalide.");
+    echo json_encode($response);
     exit;
 }
 ?>

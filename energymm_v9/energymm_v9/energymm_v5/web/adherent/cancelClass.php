@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: ../adherent/planning.php");
     } else {
         //echo "Error: " . $stmt->error;
-        header("Location: ../web/error.html");
+        header("Location: ../web/error.php");
     }
 
     $stmt->closeCursor();

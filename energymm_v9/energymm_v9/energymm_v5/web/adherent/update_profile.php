@@ -47,7 +47,7 @@ if ($result) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Profile</title>
+    <title>Modifier Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.0/font/bootstrap-icons.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="../css/planning.css"> -->
@@ -182,14 +182,14 @@ if ($result) {
 <div class="content">
 <div class="form-container">
 
-    <h2>Update Profile</h2>
+    <h2>Mettre à jour le profile</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?field=' . $_GET['field']; ?>" method="post">
         <div class="form-group">
             <label for="<?php echo $_GET['field']; ?>"><?php echo $fieldName; ?>:</label>
             <input type="text" id="<?php echo $_GET['field']; ?>" name="<?php echo $_GET['field']; ?>" value="<?php echo $currentValue; ?>" required>
         </div>
         <div class="form-group">
-            <button type="submit">Update</button>
+        <button type="submit">Mettre à jour</button>
         </div>
     </form>
 </div>

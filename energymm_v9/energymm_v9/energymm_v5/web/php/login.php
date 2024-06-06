@@ -120,13 +120,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2>Connexion</h2>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
     <input type="text" placeholder="Email" name="email" required>
-    <input type="password" placeholder="Password" name="password" required>
-    <button type="submit">Log in <i class="bi bi-arrow-right"></i></button>
+    <input type="password" placeholder="Mot de passe" name="password" required>
+    <button type="submit">Se connecter <i class="bi bi-arrow-right"></i></button>
     </form>
     <div class="footer-text">
-      <a href="../php/register.php">Register</a><br>
-      <a href="../php/reset_password.php">Forget password ?</a> &nbsp;
-      <a href="../index.php">Back to home</a>
+    <a href="../php/register.php">S'inscrire</a><br>
+      <a href="../php/reset_password.php">Mot de passe oublié ?</a> &nbsp;
+      <a href="../index.php">Retour à l'accueil</a>
     </div>
     <?php if(isset($error)) { ?>
       <div class="alert alert-danger mt-3" role="alert"><?php echo $error; ?></div>

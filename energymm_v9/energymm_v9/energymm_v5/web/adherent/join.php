@@ -3,7 +3,7 @@ session_start();
 
 if (!isset($_SESSION['loggedin']) || !isset($_SESSION['id_adherent'])) {
     // echo "Session not set properly!";
-    header("Location: ../error.html");
+    header("Location: ../error.php");
 
     exit;
 }
@@ -31,7 +31,7 @@ if (isset($_GET['seance_id'])) {
     header('Location: ../adherent/planning.php');
     exit;
 } else {
-    echo "Parameters not set properly!";
+    echo "Paramètres mal définis!";
     exit;
 }
 ?>
