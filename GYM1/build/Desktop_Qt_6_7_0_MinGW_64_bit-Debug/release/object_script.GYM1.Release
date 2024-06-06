@@ -1,0 +1,11 @@
+release/cours.o
+release/login.o
+release/main.o
+release/mainwindow.o
+release/profil.o
+release/seance.o
+release/moc_cours.o
+release/moc_login.o
+release/moc_mainwindow.o
+release/moc_profil.o
+release/moc_seance.o

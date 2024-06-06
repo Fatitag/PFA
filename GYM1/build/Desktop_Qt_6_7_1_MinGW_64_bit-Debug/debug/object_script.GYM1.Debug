@@ -1,0 +1,11 @@
+debug/cours.o
+debug/login.o
+debug/main.o
+debug/mainwindow.o
+debug/profil.o
+debug/seance.o
+debug/moc_cours.o
+debug/moc_login.o
+debug/moc_mainwindow.o
+debug/moc_profil.o
+debug/moc_seance.o
